@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class addForce : MonoBehaviour
 {
-    public float thrust = 1.5F;
+    private float thrust = 22F;
     public Rigidbody rb;
-    public bool isTapable = true;
+    public bool isRightHand = false;
+    public bool isLeftHand = false;
 
     void Start()
     {
@@ -14,30 +16,92 @@ public class addForce : MonoBehaviour
         Debug.Log(rb);
     }
 
-    private void OnTriggerEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("OnCollisionEnter");
-        isTapable = true;
+        if (collision.gameObject.tag=="Ball")
+        {
+            SceneManager.LoadScene("SceneSetup");
+        }
     }
 
-    private void OnTriggerExit(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("OnCollisionExit");
-        isTapable = false;
+        Debug.Log(collider.tag);
+        Debug.Log(collider.ToString());
+
+        if (collider.tag == "RightHand")
+        {
+            isRightHand = true;
+            isLeftHand = false;
+            rb.position = new Vector3(-1.46F, 0, 0);
+        }
+        else if (collider.tag == "LeftHand")
+        {
+            isRightHand = false;
+            isLeftHand = true;
+            rb.position = new Vector3(1.46F, 0, 0);
+        }
+        else
+        {
+            Debug.Log("What is this??");
+        }
+        
+        rb.velocity = new Vector3(0, 0, 0);
+        rb.useGravity = false;
     }
-    private void OnMouseDown()
+
+    private void OnTriggerExit(Collider collider)
     {
-        if (isTapable)
+        Debug.Log("OnTriggerExit");
+        isRightHand = false;
+        isLeftHand = false;
+    }
+    private void throwRight()
+    {
+        if (isLeftHand)
         {
             Debug.Log("Tap!");
 
-            rb.AddForce(transform.up * thrust);
+            rb.useGravity = true;
+            rb.AddForce(new Vector3(-0.2F, 1, 0) * thrust);
 
-            isTapable = false;
+            isLeftHand = false;
         }
         else
         {
             Debug.Log("Not tapable");
+        }
+    }
+    private void throwLeft()
+    {
+        if (isRightHand)
+        {
+            Debug.Log("Tap!");
+
+            rb.useGravity = true;
+            rb.AddForce(new Vector3(0.3F, 0.6F, 0) * thrust);
+
+            isRightHand = false;
+        }
+        else
+        {
+            Debug.Log("Not tapable");
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            throwRight();
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            throwLeft();
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("SceneSetup");
         }
     }
 }
