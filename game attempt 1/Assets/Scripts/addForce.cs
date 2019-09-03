@@ -56,7 +56,7 @@ public class addForce : MonoBehaviour
         isRightHand = false;
         isLeftHand = false;
     }
-    private void throwRight()
+    public void throwRight()
     {
         if (isLeftHand)
         {
@@ -72,7 +72,7 @@ public class addForce : MonoBehaviour
             Debug.Log("Not tapable");
         }
     }
-    private void throwLeft()
+    public void throwLeft()
     {
         if (isRightHand)
         {
