@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 470422890}
   - component: {fileID: 470422889}
   - component: {fileID: 470422888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 476455929}
   - component: {fileID: 476455928}
   - component: {fileID: 476455927}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684fa34806a87cb47b8de0ec8bb90cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 532857877177543079, guid: 307d95a891291ee458e0102d3baaf89f, type: 3}
 --- !u!1 &1204843048
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 1204843052}
   - component: {fileID: 1204843051}
   - component: {fileID: 1204843050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 1571302890}
   - component: {fileID: 1571302889}
   - component: {fileID: 1571302888}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftHand
   m_TagString: LeftHand
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571302886}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -948,7 +948,7 @@ GameObject:
   - component: {fileID: 1701195434}
   - component: {fileID: 1701195433}
   - component: {fileID: 1701195432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 1753468382}
   - component: {fileID: 1753468381}
   - component: {fileID: 1753468380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1133,7 +1133,7 @@ GameObject:
   - component: {fileID: 1771494608}
   - component: {fileID: 1771494607}
   - component: {fileID: 1771494606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1226,7 +1226,7 @@ GameObject:
   - component: {fileID: 1868935279}
   - component: {fileID: 1868935278}
   - component: {fileID: 1868935277}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHand
   m_TagString: RightHand
   m_Icon: {fileID: 0}
@@ -1255,7 +1255,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868935275}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
